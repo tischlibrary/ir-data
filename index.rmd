@@ -1,0 +1,96 @@
+---
+title: 
+output:
+  revealjs::revealjs_presentation:
+    theme: night
+    transition: fade
+    highlight: zenburn
+    center: true
+---
+
+## Finding Social Science Data for Your Research {data-background="data1.jpg"}
+
+Josh Quan
+
+Tisch Library
+
+Spring 2017
+
+
+
+##
+
+> An approximate answer to the right question is worth a
+great deal more than a precise answer to the wrong
+question.
+
+-John Tukey
+
+
+
+## Plan your Research with a Literature Review {data-background="books.jpg"}
+
+http://tischlibrary.tufts.edu
+
+
+
+## Ask Yourself... {data-background="books.jpg"}
+
+
+
+- How feasible or doable is your research question? 
+
+- Can you answer the question with a simple descriptive statistic (like an average, median, percentage, etc)? If so, then your research question might be too narrow.
+
+- Does the answer to your question have too many angles? For example: What best practices have solved poverty? If so, then your question might be too broad.
+		
+
+
+## The strucure and availability of data
+
+
+
+| Unit of Analysis                                                                       	| Geography                                                                          	| Time-Period                                                             	| Frequency                                                                                              	|
+|----------------------------------------------------------------------------------------	|------------------------------------------------------------------------------------	|-------------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------	|
+| For which level do you want data?  Summary or Micro?  (individuals, counties, nations) 	| Is there a geographic  component to your topic?  (U.S., Sub-Saharan Africa, India) 	| Do you want a data for a  specific time period?  (1980-2000, 1930-1960) 	| How often do you want measures  for your variables?  (every year, every ten years, monthly, quarterly) 	|
+
+
+## Data Providers
+
+| Researchers                                                    	| Government Agencies                                                                                                                                                                       	| NGOs                                                                                                                                     	| Research Organizations                                                                                                   	|
+|----------------------------------------------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|------------------------------------------------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------	|
+| Are there people you know who are doing this kind of research? 	| Think about government agencies - is the request for some official statistics or data that they'd be likely to collect and publish? (industry, agriculture, construction, disease, crime) 	| Are there councils or interest organizations devoted to the topic that might collect data independently? (HIV/AIDS, drugs, civil rights) 	| Would any specific research organizations be interested in the topic? (Pew, Roper, Gallup, NORC, NBER, World Bank, OECD) 	|
+
+
+
+##Data Research Guide
+
+http://researchguides.library.tufts.edu/data
+
+
+
+##Web Scraping
+http://statbel.fgov.be/en/statistics/figures/economy/indicators/prix_prod_con/
+
+```{r, include=FALSE}
+library(rvest)
+```
+
+```{r, warning=FALSE, message=FALSE}
+url='http://statbel.fgov.be/en/statistics/figures/economy/indicators/prix_prod_con/'
+TAB=read_html(url)%>%html_nodes('td')%>%html_text()
+NAMES=read_html(url)%>%html_nodes('th')%>%html_text()
+M=data.frame(matrix(TAB,ncol=5,nrow=9,byrow=T))
+M=cbind(NAMES[7:15],M)
+names(M)=NAMES[1:6]
+M
+```
+
+
+## questions?
+
+email: joshua.quan@tufts.edu
+
+
+
+
