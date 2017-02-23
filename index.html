@@ -106,11 +106,11 @@ code > span.in { color: #7f9f7f; font-weight: bold; } /* Information */
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'IR_files/reveal.js-3.3.0/css/print/pdf.css' : 'IR_files/reveal.js-3.3.0/css/print/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'index_files/reveal.js-3.3.0/css/print/pdf.css' : 'index_files/reveal.js-3.3.0/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
     <!--[if lt IE 9]>
-    <script src="IR_files/reveal.js-3.3.0/lib/js/html5shiv.js"></script>
+    <script src="index_files/reveal.js-3.3.0/lib/js/html5shiv.js"></script>
     <![endif]-->
 
 </head>
@@ -226,6 +226,7 @@ M</code></pre></div>
 <section id="questions" class="slide level2">
 <h1>questions?</h1>
 <p>email: <a href="mailto:joshua.quan@tufts.edu">joshua.quan@tufts.edu</a></p>
+<!--render("index.Rmd", revealjs_presentation())-->
 </section>
     </div>
   </div>
