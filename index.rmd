@@ -46,7 +46,7 @@ http://tischlibrary.tufts.edu
 		
 
 
-## The strucure and availability of data
+## The structure and availability of data
 
 
 
@@ -92,5 +92,5 @@ M
 email: joshua.quan@tufts.edu
 
 
-
+<!--render("index.Rmd", revealjs_presentation())-->
 
